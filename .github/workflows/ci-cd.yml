@@ -1,13 +1,11 @@
 name: CI/CD
+env:
+  S3_BUCKET_NAME : "redmine-deployments"
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   buildAndTest:
     name: CI Pipeline
@@ -36,7 +34,7 @@ jobs:
         node-version: ['12.x']
         appname: ['aws-codedeploy']
         deploy-group: ['staging']
-        s3-bucket: ['aws-codedeploy-deployments']
+        s3-bucket: ['redmine-deployments']
         s3-filename: ['staging-aws-codedeploy-${{ github.sha }}']
 
     needs: buildAndTest
