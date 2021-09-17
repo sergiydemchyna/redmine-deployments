@@ -15,7 +15,6 @@ jobs:
    
 
     steps:
-      - uses: actions/checkout@v2
 
       
 
@@ -33,7 +32,6 @@ jobs:
 
     needs: buildAndTest
     steps:
-      - uses: actions/checkout@v2
 
      
 
