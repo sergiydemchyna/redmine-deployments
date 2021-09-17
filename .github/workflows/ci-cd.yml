@@ -12,9 +12,7 @@ jobs:
   buildAndTest:
     name: CI Pipeline
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['12.x']
+   
 
     steps:
       - uses: actions/checkout@v2
@@ -27,8 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
-        node-version: ['12.x']
+        
         appname: ['aws-codedeploy']
         deploy-group: ['staging']
         s3-bucket: ['redmine-deployments']
