@@ -5,8 +5,8 @@ files:
     destination: /home/ubuntu/aws-codedeploy
 permissions:
   - object: /home/ubuntu
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
     type:
       - directory
       - file
@@ -14,4 +14,4 @@ hooks:
   ApplicationStart:
     - location: scripts/reload-pm2.sh
       timeout: 300
-      runas: ubuntu
+      runas: root
