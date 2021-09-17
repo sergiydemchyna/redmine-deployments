@@ -49,15 +49,15 @@ jobs:
         aws-secret-access-key:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region           :  ${{ env.AWS_REGION_NAME }}
     
-   - name: AWS Create Deployment
-        run: |
-          aws deploy create-deployment \
-           --application-name ${{ env.EB_APPLICATION_NAME }} \
-           --deployment-config-name CodeDeployDefault.OneAtATime \
-           --deployment-group-name ${{ env.DEPLOY_GROUP_NAME }} \
-           --file-exists-behavior OVERWRITE \
-           --s3-location bucket=${{ env.EB_PACKAGE_S3_BUCKET_NAME }},key=${{ env.DEPLOY_PACKAGE_NAME }}.zip,bundleType=zip \
-           { github.sha }}"
+    - name: AWS Create Deployment
+      run: | 
+         aws deploy create-deployment \
+            --application-name ${{ env.EB_APPLICATION_NAME }} \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --deployment-group-name ${{ env.DEPLOY_GROUP_NAME }} \
+            --file-exists-behavior OVERWRITE \
+            --s3-location bucket=${{ env.EB_PACKAGE_S3_BUCKET_NAME }},key=${{ env.DEPLOY_PACKAGE_NAME }}.zip,bundleType=zip \
+            { github.sha }}"
       
     - name: Print Happy Message for CD finish
       run : echo "CD Pipeline part Finished successfully!"
