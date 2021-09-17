@@ -38,7 +38,7 @@ jobs:
         appname: ['aws-codedeploy']
         deploy-group: ['staging']
         s3-bucket: ['redmine-deployments']
-        s3-filename: ['redmine-aws-codedeploy-${{ github.sha }}']
+        s3-filename: ['staging-aws-codedeploy-${{ github.sha }}']
 
     needs: buildAndTest
     steps:
