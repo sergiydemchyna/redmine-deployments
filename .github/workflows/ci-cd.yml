@@ -7,24 +7,7 @@ on:
     branches:
       - main
 jobs:
-  buildAndTest:
-    name: CI Pipeline
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: ['12.x']
-
-    steps:
-      - uses: actions/checkout@v2
-
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      
-
+ 
   deploy:
     name: CD Pipeline
     runs-on: ubuntu-latest
@@ -37,17 +20,8 @@ jobs:
         s3-bucket: ['redmine-deployments']
         s3-filename: ['staging-aws-codedeploy-${{ github.sha }}']
 
-    needs: buildAndTest
     steps:
-      - uses: actions/checkout@v2
 
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-    
     
       # Configure AWS credentials
       - name: Configure AWS credentials
