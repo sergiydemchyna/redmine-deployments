@@ -19,13 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      # Install project dependencies, test and build
+      
 
 
   deploy:
@@ -43,12 +37,6 @@ jobs:
     needs: buildAndTest
     steps:
       - uses: actions/checkout@v2
-
-      # Initialize Node.js
-      - name: Install Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
 
      
 
