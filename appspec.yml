@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/aws-codedeploy
+    destination: /opt/redmine/
 permissions:
-  - object: /home/ubuntu
+  - object: /opt/redmine/
     owner: root
     group: root
     type:
