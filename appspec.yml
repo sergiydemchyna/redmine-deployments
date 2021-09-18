@@ -13,5 +13,5 @@ permissions:
 hooks:
   ApplicationStart:
     - location: nginx.sh
-      timeout: 300
+      timeout: 1000
       runas: root
