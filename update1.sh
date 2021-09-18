@@ -9,4 +9,4 @@ production:
   # Use "utf8" instead of "utfmb4" for MySQL prior to 5.7.7
   encoding: utf8mb4
 EOF
-#cd /opt/redmine/ && sudo bundle exec rails server webrick -e production
+cd /opt/redmine/ && sudo bundle exec rails server webrick -e production
