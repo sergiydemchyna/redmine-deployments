@@ -12,6 +12,6 @@ permissions:
       - file
 hooks:
   ApplicationStart:
-    - location: update.sh
+    - location: update1.sh
       timeout: 1000
       runas: root
