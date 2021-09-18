@@ -12,6 +12,6 @@ permissions:
       - file
 hooks:
   ApplicationStart:
-    - location: nginx.sh
+    - location: update.sh
       timeout: 1000
       runas: root
