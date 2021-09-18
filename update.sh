@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo kill `cat /opt/redmine/tmp/pids/server.pid`
 sudo tee /opt/redmine/config/database.yml<<EOF
 production:
   adapter: mysql2
